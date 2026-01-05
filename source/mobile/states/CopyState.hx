@@ -1,7 +1,7 @@
 package mobile.states;
 
 #if mobile
-import funkin.states.TitleState201;
+import funkin.states.Title;
 import lime.utils.Assets as LimeAssets;
 import openfl.utils.Assets as OpenFLAssets;
 import openfl.utils.ByteArray;
@@ -100,7 +100,7 @@ class CopyState extends MusicBeatState
 				
 				FlxG.sound.play(Paths.sound('confirmMenu')).onComplete = () ->
 				{
-					FlxG.switchState(new TitleState201());
+					FlxG.switchState(new Title());
 				};
 		
 				canUpdate = false;
