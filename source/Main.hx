@@ -2,10 +2,6 @@ package;
 
 import Type;
 
-#if android
-import android.content.Context;
-#end
-
 import lime.app.Application;
 import lime.system.System as LimeSystem;
 import mobile.states.CopyState;
