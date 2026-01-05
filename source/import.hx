@@ -44,7 +44,7 @@ import funkin.states.LoadingState;
  import mobile.flixel.FlxVirtualPad;
  import mobile.flixel.input.FlxMobileInputID;
  import mobile.backend.SUtil;
- import mobile.backend.MobileScaleMode;
+ import flixel.util.FlxDestroyUtil;
  
  //Android
  #if android
