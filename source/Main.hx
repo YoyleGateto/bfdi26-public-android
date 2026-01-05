@@ -6,6 +6,10 @@ import Type;
 import android.content.Context;
 #end
 
+import lime.app.Application;
+import lime.system.System as LimeSystem;
+import mobile.states.CopyState;
+
 import funkin.api.FPSCounter;
 
 import flixel.addons.transition.FlxTransitionableState;
@@ -95,16 +99,21 @@ class Main extends Sprite
 		#end
 
 		// Credits to MAJigsaw77 (he's the og author for this code)
-		#if android
-		Sys.setCwd(Path.addTrailingSlash(Context.getExternalFilesDir()));
-		#elseif ios
-		Sys.setCwd(lime.system.System.applicationStorageDirectory);
-		#end
+		#if mobile
+ 		#if android
+ 		SUtil.requestPermissions();
+ 		#end
+ 		Sys.setCwd(SUtil.getStorageDirectory());
+ 		#end
+		mobile.backend.CrashHandler.init();
 
-		var _game = new FlxGame(game.width, game.height, game.firstState, game.fps, game.fps, game.skipSplash, game.startFullscreen);
+		var _game = new FlxGame(game.width, game.height, #if (mobile && MODS_ALLOWED) CopyState.checkExistingFiles() ? game.firstState : CopyState #else game.firstState #end, game.fps, game.fps, game.skipSplash, game.startFullscreen);
 		@:privateAccess _game._customSoundTray = funkin.objects.BFDISoundTray;
 		Setup.loadSave();
 		addChild(_game);
+
+		#if android FlxG.android.preventDefaultKeys = [BACK]; #end
+		LimeSystem.allowScreenTimeout = ClientPrefs.screensaver;
 
 		FlxG.signals.preStateSwitch.add(function () 
 		{
