@@ -1,6 +1,11 @@
 package funkin.utils;
 
+#if sys
+import sys.FileSystem;
+import sys.io.File;
+#else
 import openfl.utils.Assets;
+#end
 import openfl.Lib;
 import openfl.system.Capabilities;
 
@@ -18,6 +23,16 @@ import funkin.states.PlayState;
 import funkin.data.Highscore;
 
 import tjson.TJSON;
+import flixel.util.FlxColor;
+import flixel.FlxG;
+import flixel.util.FlxSave;
+import flixel.sound.FlxSound;
+import lime.utils.AssetLibrary;
+import lime.utils.AssetManifest;
+import lime.utils.Assets as LimeAssets;
+import openfl.utils.Assets;
+
+using StringTools;
 
 class CoolUtil
 {
@@ -214,6 +229,12 @@ class CoolUtil
 		#end
 	}
 
+	public static function showPopUp(title:String, description:String = '')
+	{
+		FlxG.stage.window.alert(description, title);
+		trace(description);
+	}
+
 	inline public static function openFolder(folder:String, absolute:Bool = false) {
 		#if sys
 			if(!absolute) folder =  Sys.getCwd() + '$folder';
@@ -248,6 +269,11 @@ class CoolUtil
 		// #if (flixel < "5.0.0") return company; #else
 		return '${company}/${flixel.util.FlxSave.validate(FlxG.stage.application.meta.get('file'))}';
 		// #end
+	}
+
+	public static function getCPUThreadsCount():Int
+    {
+        return 1;
 	}
 
 	public static function setTextBorderFromString(text:FlxText, border:String)
