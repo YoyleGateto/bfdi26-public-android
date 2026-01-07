@@ -11,6 +11,8 @@ import flixel.input.gamepad.FlxGamepadInputID;
  	public var wideScreen:Bool = false;
  	public var controlsAlpha:Float = 0.7;
  	public var hideHitboxHints:Bool = false;
+	public var ExtraHints:Bool = false;
+	public var keyboardEnabled:Bool = false;
 	public var botPlay:Bool = false;
 	public var downScroll:Bool = false;
 	public var middleScroll:Bool = false;
