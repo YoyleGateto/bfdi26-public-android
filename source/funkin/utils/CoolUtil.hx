@@ -34,6 +34,10 @@ import openfl.utils.Assets;
 
 using StringTools;
 
+#if cpp
+@:cppFileCode('#include <thread>')
+#end
+
 class CoolUtil
 {
 	/**
@@ -234,6 +238,12 @@ class CoolUtil
 		FlxG.stage.window.alert(description, title);
 		trace(description);
 	}
+
+	#if cpp
+    @:functionCode('
+        return std::thread::hardware_concurrency();
+    ')
+	#end
 
 	inline public static function openFolder(folder:String, absolute:Bool = false) {
 		#if sys
