@@ -4,7 +4,7 @@ import flixel.addons.ui.FlxUIState;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.FlxState;
 import funkin.backend.PsychCamera;
-import funkin.api.DiscordClient;
+//import funkin.api.DiscordClient;
 import openfl.net.URLLoader;
 import openfl.net.URLRequest;
 import openfl.events.Event;
