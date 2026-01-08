@@ -2,7 +2,7 @@ package funkin.api;
 
 import Sys.sleep;
 import lime.app.Application;
-import hxdiscord_rpc.Discord;
+//import hxdiscord_rpc.Discord;
 import hxdiscord_rpc.Types;
 
 class DiscordClient
