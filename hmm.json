@@ -52,7 +52,7 @@
       "name": "hxcpp",
       "type": "git",
       "dir": null,
-      "ref": "master",
+      "ref": "v4.3.73",
       "url": "https://github.com/HaxeFoundation/hxcpp"
     },
     {
