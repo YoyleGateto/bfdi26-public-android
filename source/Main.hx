@@ -109,7 +109,7 @@ class Main extends Sprite
 		addChild(_game);
 
 		#if android FlxG.android.preventDefaultKeys = [BACK]; #end
-		LimeSystem.allowScreenTimeout = ClientPrefs.screensaver;
+		LimeSystem.allowScreenTimeout = ClientPrefs.data.screensaver;
 
 		FlxG.signals.preStateSwitch.add(function () 
 		{
