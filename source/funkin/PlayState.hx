@@ -10,9 +10,7 @@ import funkin.backend.Song;
 import funkin.backend.Section;
 import funkin.backend.Rating;
 import funkin.backend.PsychCamera;
-#if DISCORD_ALLOWED
-//import hxdiscord_rpc.Discord;
-#end
+
 import funkin.data.Highscore;
 import funkin.data.ModSave;
 import funkin.data.StageData;
