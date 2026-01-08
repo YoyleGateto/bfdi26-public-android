@@ -11,7 +11,7 @@ import funkin.backend.Section;
 import funkin.backend.Rating;
 import funkin.backend.PsychCamera;
 
-import hxdiscord_rpc.Discord;
+//import hxdiscord_rpc.Discord;
 
 import funkin.data.Highscore;
 import funkin.data.ModSave;
