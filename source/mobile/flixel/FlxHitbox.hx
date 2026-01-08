@@ -38,7 +38,7 @@ class FlxHitbox extends FlxSpriteGroup {
 		for (i in 0 ... keyCount) {
 			hitbox.add(add(array[i] = createhitbox(hitboxWidth * i, 0, hitboxWidth, FlxG.height, hitboxColor[keyCount][i])));
       array[i].stringIDs = ['${type}_key_${keyCount}'];
-		if (ClientPrefs.ExtraHints && !ClientPrefs.hideHitboxHints)
+		if (ClientPrefs.data.ExtraHints && !ClientPrefs.data.hideHitboxHints)
 			    hints.add(add(createHints(hitboxWidth * i, 0, hitboxWidth, FlxG.height, hitboxColor[keyCount][i])));
 		}
 	}
@@ -52,7 +52,7 @@ class FlxHitbox extends FlxSpriteGroup {
 		button.updateHitbox();
 		button.alpha = 0.00001;
 
-		if (!ClientPrefs.hideHitboxHints)
+		if (!ClientPrefs.data.hideHitboxHints)
 		{
 			button.onDown.callback = function()
 			{
@@ -108,9 +108,9 @@ class FlxHitbox extends FlxSpriteGroup {
 	}
 	function createHintGraphic(Width:Int, Height:Int):BitmapData
 	{
-		var guh = ClientPrefs.controlsAlpha;
+		var guh = ClientPrefs.data.controlsAlpha;
 		if (guh >= 0.9)
-			guh = ClientPrefs.controlsAlpha - 0.07;
+			guh = ClientPrefs.data.controlsAlpha - 0.07;
 		var shape:Shape = new Shape();
 		shape.graphics.beginFill(0xFFFFFF);
 		shape.graphics.lineStyle(3, 0xFFFFFF, 1);
