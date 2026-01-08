@@ -10,7 +10,7 @@ class DiscordClient
 	public static var isInitialized:Bool = false;
 	private static final _defaultID:String = "1260051488265470014";
 	public static var clientID(default, set):String = _defaultID;
-	private static var presence:DiscordRichPresence = new DiscordRichPresence();
+	//private static var presence:DiscordRichPresence = new DiscordRichPresence();
 	public static var userId:String = null;
 
 	public static function check()
@@ -85,7 +85,7 @@ class DiscordClient
 		var startTimestamp:Float = 0;
 		if (hasStartTimestamp) startTimestamp = Date.now().getTime();
 		if (endTimestamp > 0) endTimestamp = startTimestamp + endTimestamp;
-
+/*
 		presence.details = details;
 		presence.state = state;
 		presence.largeImageKey = 'icon';
@@ -95,7 +95,7 @@ class DiscordClient
 		presence.startTimestamp = Std.int(startTimestamp / 1000);
 		presence.endTimestamp = Std.int(endTimestamp / 1000);
 		updatePresence();
-
+*/
 		//trace('Discord RPC Updated. Arguments: $details, $state, $smallImageKey, $hasStartTimestamp, $endTimestamp');
 	}
 
