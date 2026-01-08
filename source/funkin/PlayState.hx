@@ -11,7 +11,7 @@ import funkin.backend.Section;
 import funkin.backend.Rating;
 import funkin.backend.PsychCamera;
 #if DISCORD_ALLOWED
-import hxdiscord_rpc.Discord;
+//import hxdiscord_rpc.Discord;
 #end
 import funkin.data.Highscore;
 import funkin.data.ModSave;
@@ -395,10 +395,10 @@ class PlayState extends MusicBeatState
 
 		#if DISCORD_ALLOWED
 		// String that contains the mode defined here so it isn't necessary to call changePresence for each mode
-		storyDifficultyText = Difficulty.getString();
+		//storyDifficultyText = Difficulty.getString();
 
 		// String for when the game is paused
-		detailsPausedText = "Paused - " + detailsText;
+		//detailsPausedText = "Paused - " + detailsText;
 		#end
 
 		GameOverSubstate.resetVariables();
@@ -704,7 +704,7 @@ class PlayState extends MusicBeatState
 		#end
 		
 		#if DISCORD_ALLOWED
-		DiscordClient.changePresence('');
+		/*DiscordClient.changePresence('');
 		//HINT
 		
 		for (i in 0...list.length) //REWRITE LATERO
@@ -715,7 +715,7 @@ class PlayState extends MusicBeatState
 					DiscordClient.changePresence('BFDI26 - ${list[i][2]}');
 				});
 			}
-		}
+		}*/
 		#end
 
 		if (PlayState.SONG.song.toLowerCase() == "yoylefake") 
@@ -2031,8 +2031,8 @@ class PlayState extends MusicBeatState
 		chartingMode = true;
 
 		#if DISCORD_ALLOWED
-		DiscordClient.changePresence("Chart Editor", null, null, true);
-		DiscordClient.resetClientID();
+		//DiscordClient.changePresence("Chart Editor", null, null, true);
+		//DiscordClient.resetClientID();
 		#end
 
 		FlxG.switchState(ChartingState.new);
@@ -2045,7 +2045,7 @@ class PlayState extends MusicBeatState
 		paused = true;
 		if(FlxG.sound.music != null)
 			FlxG.sound.music.stop();
-		#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
+		//#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
 		FlxG.switchState(()->new CharacterEditorState(SONG.player2));
 	}
 
@@ -2530,9 +2530,9 @@ class PlayState extends MusicBeatState
 				{
 					Mods.loadTopMod();
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
-					#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
+					//#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
 
-					DiscordClient.set_clientID("1260051488265470014");
+					//DiscordClient.set_clientID("1260051488265470014");
 					FlxG.switchState(funkin.states.NewMain.new);
 
 					// if ()
@@ -2563,9 +2563,9 @@ class PlayState extends MusicBeatState
 			else
 			{
 				Mods.loadTopMod();
-				#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
+				//#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
 
-				DiscordClient.set_clientID("1260051488265470014");
+				//DiscordClient.set_clientID("1260051488265470014");
 
 				//really bruh
 				if (FUCKMYLIFE) 
