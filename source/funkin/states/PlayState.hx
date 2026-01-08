@@ -702,7 +702,7 @@ class PlayState extends MusicBeatState
 				#end
 			}
 		#end
-
+/*
 		DiscordClient.changePresence('');
 		//HINT
 		#if DISCORD_ALLOWED
@@ -716,7 +716,7 @@ class PlayState extends MusicBeatState
 			}
 		}
 		#end
-
+*/
 		if (PlayState.SONG.song.toLowerCase() == "yoylefake") 
 		{
 			yoylefakes = new Video4();
@@ -2529,9 +2529,9 @@ class PlayState extends MusicBeatState
 				{
 					Mods.loadTopMod();
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
-					#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
+					//#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
 
-					DiscordClient.set_clientID("1260051488265470014");
+					//DiscordClient.set_clientID("1260051488265470014");
 					FlxG.switchState(funkin.states.NewMain.new);
 
 					// if ()
@@ -2562,9 +2562,9 @@ class PlayState extends MusicBeatState
 			else
 			{
 				Mods.loadTopMod();
-				#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
+				//#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
 
-				DiscordClient.set_clientID("1260051488265470014");
+				//DiscordClient.set_clientID("1260051488265470014");
 
 				//really bruh
 				if (FUCKMYLIFE) 
