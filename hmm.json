@@ -51,7 +51,9 @@
     {
       "name": "hxcpp",
       "type": "git",
-      "url": "https://github.com/th2l-devs/hxcpp"
+      "dir": null,
+      "ref": "master",
+      "url": "https://github.com/HaxeFoundation/hxcpp"
     },
     {
       "name": "hxcpp-debug-server",
