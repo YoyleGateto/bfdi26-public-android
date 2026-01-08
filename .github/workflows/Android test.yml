@@ -25,7 +25,7 @@ jobs:
         run: |
           haxelib install hmm --quiet
           haxelib run hmm install --quiet
-          cd ~/.haxelib/hxcpp/git/tools/hxcpp
+          cd /home/runner/work/bfdi26-public-android/bfdi26-public-android/.haxelib/hxcpp/git/tools/hxcpp
           haxe compile.hxml
           cd ../../project
           neko build.n
