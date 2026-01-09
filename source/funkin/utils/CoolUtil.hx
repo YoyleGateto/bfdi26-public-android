@@ -239,11 +239,11 @@ class CoolUtil
 		trace(description);
 	}
 
-	#if cpp
+	/*#if cpp
     @:functionCode('
         return std::thread::hardware_concurrency();
     ')
-	#end
+	#end*/
 
 	inline public static function openFolder(folder:String, absolute:Bool = false) {
 		#if sys
