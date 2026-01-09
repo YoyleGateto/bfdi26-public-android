@@ -6,6 +6,7 @@ on:
 jobs:
   Android:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@main
@@ -26,12 +27,26 @@ jobs:
           haxelib install hmm --quiet
           haxelib run hmm install --quiet
 
+      - name: Install hxcpp (GitHub)
+        run: |
+          haxelib git hxcpp https://github.com/HaxeFoundation/hxcpp v4.3.73
+
+      - name: Build hxcpp tool
+        run: |
+          cd ~/.haxelib/hxcpp/git/tools/hxcpp
+          haxe compile.hxml
+
+      - name: Build hxcpp binaries
+        run: |
+          cd ~/.haxelib/hxcpp/git/project
+          neko build.n
+
       - name: Configure Android
         run: |
           haxelib run lime config ANDROID_SDK $ANDROID_HOME
           haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_LATEST_HOME
           haxelib run lime config JAVA_HOME $JAVA_HOME
-          haxelib run lime config ANDROID_SETUP true 
+          haxelib run lime config ANDROID_SETUP true
 
       - name: Compile
         run: haxelib run lime build android
