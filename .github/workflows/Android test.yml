@@ -25,7 +25,7 @@ jobs:
         run: |
           haxelib install hmm --quiet
           haxelib run hmm install --quiet
-          haxelib install hxcpp v4.3.73 --quiet
+          haxelib install hxcpp 4.3.73 --quiet
 
       - name: Configure Android
         run: |
