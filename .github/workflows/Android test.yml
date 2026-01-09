@@ -25,7 +25,6 @@ jobs:
         run: |
           haxelib install hmm --quiet
           haxelib run hmm install --quiet
-          haxe compile.hxml
 
       - name: Configure Android
         run: |
