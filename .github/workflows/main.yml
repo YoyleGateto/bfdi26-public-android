@@ -1,4 +1,4 @@
-name: Android Build Test
+name: Main
 
 on:
   workflow_dispatch:
@@ -27,11 +27,7 @@ jobs:
           haxelib install hmm --quiet
           haxelib run hmm install --quiet
 
-      - name: Install hxcpp (GitHub)
-        run: |
-          haxelib git hxcpp https://github.com/HaxeFoundation/hxcpp v4.3.73
-
-      - name: Build hxcpp tool
+      - name: Compile hxcpp
         run: |
           cd .haxelib/hxcpp/git/tools/hxcpp
           haxe compile.hxml
