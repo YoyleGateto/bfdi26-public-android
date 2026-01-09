@@ -33,12 +33,12 @@ jobs:
 
       - name: Build hxcpp tool
         run: |
-          cd ~/.haxelib/hxcpp/git/tools/hxcpp
+          cd .haxelib/hxcpp/git/tools/hxcpp
           haxe compile.hxml
 
       - name: Build hxcpp binaries
         run: |
-          cd ~/.haxelib/hxcpp/git/project
+          cd .haxelib/hxcpp/git/project
           neko build.n
 
       - name: Configure Android
